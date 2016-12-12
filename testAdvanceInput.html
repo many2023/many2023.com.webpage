@@ -1,0 +1,218 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/app.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- <style>
+        #search .twitter-typeahead {
+            width: 100%
+        }
+        #search .tt-hint, #search .tt-input {
+            display: block;
+            width: 100%;
+            height: 60px;
+            line-height: 1.33;
+            padding: 10px 44px 10px 20px;
+            border: 0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            font-size: 26px;
+            -webkit-font-smoothing: antialiased;
+            color: #555;
+            background: #eeeef1;
+            -webkit-transition: background, .3s;
+            -moz-transition: background, .3s;
+            -o-transition: background, .3s;
+            transition: background, .3s
+        }
+        #search .tt-hint:focus, #search .tt-input:focus {
+            outline: 0 !important;
+            background: #fff !important
+        }
+        #search .tt-dropdown-menu {
+            background: #fff;
+            padding-left: 5px
+        }
+        .search-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 16px;
+            font-size: 24px;
+            color: #727579;
+            cursor: pointer;
+            z-index: 2
+        }
+        .form-group {
+            margin-bottom: 15px
+        }
+        .glyphicon {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+        .glyphicon-search:before {
+            content: "\e003"
+        }
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url(./fonts/glyphicons-halflings-regular.eot);
+            src: url(./fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(./fonts/glyphicons-halflings-regular.woff) format('woff'), url(./fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(./fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
+        }
+        .col-lg-5 {
+            float: left;
+            width: 41.66666667%;
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        </style> -->
+</head>
+
+<body style="zoom: 1;">
+    <div id="background" />
+    <div id="page">
+        <svg id="svg" width="400px" height="300px" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid"></svg>
+    </div>
+    <div id="widgets" style="position: absolute;top: 0;left: 0;bottom: 0; right: 0;">
+        <div id="top-left"></div>
+        <div id="top-right" class="right"></div>
+        <div id="content" class="container">
+            <div id="center-above"></div>
+            <div id="center" class="row">
+                <div class="widget" id="search">
+                    <div class="message">
+                        <h1 class="slogan">many2023</h1>
+                        <h3 class="value-prop">just begining</h3>
+                    </div>
+                    <form id="search-form" method="get" action="http://www.baidu.com/s">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <span class="search-icon">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </span>
+                                <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
+                                    <input class="typeahead tt-hint" type="text" disabled="" autocomplete="off" spellcheck="false" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: rgb(238, 238, 241);">
+                                    <input class="typeahead tt-input" name="wd" type="text" placeholder="Search Baidu" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
+                                    <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 26px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                                    <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto; width: 696px;">
+                                        <div class="tt-dataset-0"></div>
+                                    </span>
+                                </span>
+                                <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="center-below" class="row"></div>
+        </div>
+        <div id="bottom" class="col-lg-6 center-block"></div>
+        <div id="bottom-right" class="right">
+            <div class="widget metric" id="weather" onmouseover="aaa()" onmouseout="bbb()">
+            </div>
+        </div>
+        <div></div>
+    </div>
+    
+    <script type="text/javascript">
+        window.onload = function() {
+            init();
+    }
+    </script>
+    <script language="javascript" type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/topojson.v1.min.js"></script>
+    <script type="text/javascript" src="js/world.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script id="weather-template" type="text/x-handlebars-template">
+        <div class="metric-stat" title="Double click to change unit.">
+            <span id="icon" data-icon="{{code}}" title="{{condition}}"></span>{{temperature}}&deg;<span class="unit {{unitClass}}">{{unit}}</span>
+        </div>
+        <span class="location metric-label data">{{location}}</span>
+        <div id="weather-detail">
+            <div class="row">
+                <div class="col-md-3">
+                    <span class="col-md-8">
+                    <div class="weather-icon" id="weather-today-code" data-icon="{{code}}"></div>
+                    <div id="weather-today-condition">{{condition}}</div>
+                </span>
+                    <span class="col-md-4" id="weather-today-temperature">{{temperature}}&deg;</span>
+                </div>
+                <div class="col-md-9">
+                    <ul>
+                        {{#each forecast}}
+                        <li>
+                            <h2>{{day}}</h2>
+                            <h2>{{date}}</h2>
+                            <span class="weather-icon" data-icon="{{code}}" title="{{text}}"> </span> <span class="high-temp">{{high}}&deg;</span> <span class="temp-separator">|</span> <span class="low-temp">{{low}}&deg;</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="row" style="padding: 5px 15px;">
+                <div id="sunmoon" class="col-md-5 weather-detail-block">
+                    <h3>Sun Position</h3>
+                    <div id="sun-times">
+                        <div id="sun-path">
+                            <div id="sun-animation"></div>
+                        </div>
+                        <div id="sun-symbol-path" style="transform: rotateZ(-75deg);"><span id="symbol">☀</span></div>
+                    </div>
+                    <div id="sun-legend">
+                        {{#if astronomy}} {{#with astronomy}}
+                        <div id="sunrise">{{sunrise}}</div>
+                        <div id="sunset">{{sunset}}</div>
+                        {{/with}} {{/if}}
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                </div>
+                <div id="weather-misc" class="col-md-3 weather-detail-block">
+                    <h3>More Detail</h3> {{#with detail}}
+                    <div>Visibility: <span>{{visibility}}</span></div>
+                    <div>Humidity: <span>{{humidity}}</span></div>
+                    <div>Pressure: <span>{{pressure}}</span></div>
+                    <div>Wind: <span>{{wind}}</span></div>
+                    {{/with}}
+                </div>
+                {{#if hasAqi}}
+                <div id="weather-aqi" class="col-md-3 weather-detail-block">
+                    <h3>Air Quality</h3>
+                    <div id="air-quality">
+                        {{#if aqiPermission}} {{#if aqi}}
+                        <div>{{aqi}}</div>
+                        <div style="color:{{aqiColor}}; font-size: 13px; font-weight: 500;">{{aqiCategory}}</div>
+                        {{else}}
+                        <h2> Loading... <i class="fa fa-refresh fa-spin"></i></h2> {{/if}} {{else}}
+                        <span id="aqi-permission-btn" class="btn btn-info btn-xs">Get Data from AQICN</span> {{/if}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </script>
+    <script id="centerclock-template" type="text/x-handlebars-template">
+        <h1 class="time" title="Double click to change format.">{{time}}</h1>
+        <span class="format">AM</span>
+    </script>
+
+</body>
+
+</html>

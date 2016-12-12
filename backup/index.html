@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>template</title>
+	<!-- libraries-->
+
+
+	<!-- custom files-->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<style>
+
+.map_path {
+	stroke: black;
+	stroke-width: 0;
+}
+
+.grid_path{
+/*	stroke: gray;
+	stroke-width: 1;
+	fill:none;
+	opacity: 1;*/
+}
+
+.background{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+</style>
+</head>
+<body>
+	<div id="background" class="background" style="background-image:url('http://imgsrc.baidu.com/forum/mpic/item/ad50f3def78edb1594ee3727.jpg')"/>
+	<div id="page">
+		<svg id="svg" width="400px" height="300px" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid"></svg>
+	</div>
+		<script type="text/javascript" src="js/d3.v3.min.js"></script>
+	<script type="text/javascript" src="js/topojson.v1.min.js"></script>
+	<script type="text/javascript" src="js/world.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		(function(){
+				console.log("get");
+				$.get("http://104.236.40.145:9090/getBackground",function(date){
+					console.log(date);
+					var background_image = "url(\"" + date.data + "\")";
+					// console.log(background_image)
+					document.getElementById("background").style.backgroundImage=background_image;
+					// document.getElementById("background").src=date.data;
+					// $('.Layer1').css({'background-image':background_image});
+					rotate(date.b, date.a);
+				});
+		})();
+	</script>
+</body>
+</html>

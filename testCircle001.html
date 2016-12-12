@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.right{
+		    position: relative;
+		    width: 100px;
+		    height: 200px;
+		    /*overflow: hidden;*/
+		}
+		.rightcircle{
+		    width: 160px;
+		    height: 160px;
+		    border:25px solid yellow;
+		    border-radius: 50%;
+		    position: absolute;
+/*		    top:0;
+		    right: 0;*/
+		    border-top:25px solid green;
+		    border-right:25px solid green;
+		    -webkit-transform : rotate(-45deg);
+		    -moz-transform : rotate(-45deg);
+		    -o-transform : rotate(-45deg);
+		    transform : rotate(-45deg);
+		}
+		.rightcircle{
+		    -webkit-animation-name: circle_right; 
+		    -webkit-animation-duration: 5s;
+		    -webkit-animation-timing-function: linear;
+		    /*-webkit-animation-iteration-count: infinite;*/
+		}
+
+		@-webkit-keyframes circle_right{
+		    0%{
+		        transform : rotate(-225deg);
+		    }
+		    100%{
+		        transform : rotate(-45deg);
+		    }
+		}
+
+		#sun-animation {
+			width: 10%;
+			height: 150px;
+			background-color: rgba(255, 255, 0, .4);
+			-webkit-transition: width 5s linear;
+			transition: width 5s linear
+		}
+		#sun-animation:hover
+		{
+		width:100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="right">
+	    <div class="rightcircle"></div>
+	</div>
+
+	<div id="sun-animation"></div>
+</body>
+</html>
